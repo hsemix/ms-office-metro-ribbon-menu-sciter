@@ -304,20 +304,35 @@ toolbar .content-holder .group + .group {
 }
 .ribbon-dropdown {
     list-style: none;
-    margin: 0;
+    /* margin: 0; */
+    /* min-width: 80dip; */
+    /* position: relative; */
     width: auto;
-    margin-right: *;
+    /* margin-right: *; */
     display: none;
     position: absolute;
     background: #fbfcfd;
+    /* background: #fff; */
     color: #1d1d1d;
     padding: 2px;
     border: 1px solid #dadbdc;
+    /* border: 1px solid red; */
     font-size: 12px;
     box-shadow: 2px 2px 2px 0 rgba(227, 228, 229, 0.7);
     z-index: 1000;
-    top: 100%;
-    left: 0;
+    /* top: 100%; */
+    margin-top: 2dip;
+    /* top:0;  */
+    left:0; 
+    margin-left: 8dip;
+    /* right:0; */
+    /* right:0; bottom:0; */
+    /* margin-left: auto; */
+    /* left: 0; */
+}
+
+.ribbon-split-button > .ribbon-dropdown {
+    margin-left: 50dip;
 }
 .ribbon-dropdown li,
 .ribbon-dropdown a {
@@ -346,7 +361,7 @@ toolbar .content-holder .group + .group {
 .ribbon-dropdown .divider {
     display: block;
     height: 1px;
-    width: 100%;
+    width: *;
     position: relative;
     background: #dcddde;
 }

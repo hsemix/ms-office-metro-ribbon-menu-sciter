@@ -3,6 +3,7 @@ class Ribbon : Behavior
 	function attached()
 	{
         this.selectAll(".tabs-holder > li")[1].attributes.addClass("active");
+        this.selectAll(".content-holder > .section")[0].attributes.addClass("active");
 
         this.on("click", ".tabs-holder > li a", function() {
             var allTabs = this.$p(ul);
@@ -26,5 +27,25 @@ class Ribbon : Behavior
                 activeTabContainer.attributes.addClass("active");
             }
 		});
+
+        this._dropdown();
+    }
+
+    function _dropdown()
+    {
+        this.on("click", ".ribbon-split.dropdown-toggle, .ribbon-icon-button.dropdown-toggle, .ribbon-button.dropdown-toggle", function() {
+            var dropdownParent = this.$p(div);
+            var dropdown = dropdownParent.select(".ribbon-dropdown");
+            if (this.attributes.hasClass("active")) {
+                this.attributes.removeClass("active");
+                dropdown.attributes["style"] = "display: none;";
+            } else {
+                this.attributes.addClass("active");
+                dropdown.attributes["style"] = "display: block;";
+            }
+            
+        });
+
+        
     }
 }
