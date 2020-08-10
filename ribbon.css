@@ -223,7 +223,7 @@ toolbar .content-holder .group + .group {
     position: absolute;
     bottom: 3dip;
     right: 6dip;
-    font-size: 8dip;
+    font-size: 10dip;
     width: 0;
     height: 0;
     z-index: 1;
@@ -392,8 +392,18 @@ toolbar .content-holder .group + .group {
     top: -4px;
     left: 100%;
 }
-.ribbon-dropdown .dropdown-toggle::before {
-    transform: rotate(-135deg);
+.ribbon-button.dropdown-toggle::before {
+    /* transform: rotate(-90deg); */
+    content: "\2304";
+    display: block;
+    font-size: 40dip;
+    position: absolute;
+    margin-top: 20dip;
+    margin-left: 50dip;
+    font-size: 10dip;
+    /* height: 0.3125rem;
+    width: 0.3125rem; */
+    z-index: 1;
 }
 .ribbon-dropdown .dropdown-toggle.active-toggle::before {
     transform: rotate(45deg);
