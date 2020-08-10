@@ -1,0 +1,30 @@
+class Ribbon : Behavior
+{
+	function attached()
+	{
+        this.selectAll(".tabs-holder > li")[1].attributes.addClass("active");
+
+        this.on("click", ".tabs-holder > li a", function() {
+            var allTabs = this.$p(ul);
+            var tab = this.attributes["href"];//.replace("#", "");
+
+            var tabContainer = $$(.content-holder > .section);
+            var activeTabContainer = self.select("%s", tab);
+
+            if (!this.$p(li).attributes.hasClass("static")) {
+                for (var tabs in allTabs.selectAll("li"))
+                    tabs.attributes.removeClass("active");
+                
+                this.$p(li).attributes.addClass("active");
+
+                for (var allSections in tabContainer) {
+                    allSections.attributes.removeClass("active");
+                    allSections.attributes["style"] = "display: none;";
+                }
+                
+                activeTabContainer.attributes["style"] = undefined;
+                activeTabContainer.attributes.addClass("active");
+            }
+		});
+    }
+}

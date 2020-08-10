@@ -3,16 +3,16 @@ html {
 }
 
 body { 
-    margin:0; 
-    background:white; 
+    margin: 0; 
+    background: white; 
     size: *;
 }
 
 toolbar { 
     display: block;
     flow: vertical;
-    /* background:#eee;  */
-    /* background:#fff; */
+    background:#fff;
+    prototype: Ribbon url(ribbon.tis);
 }
 
 toolbar > .tabs-holder {
@@ -22,7 +22,6 @@ toolbar > .tabs-holder {
     padding: 0;
     position: relative;
     z-index: 1;
-    /* border-bottom: 1px solid #dadbdc; */
 }
 
 toolbar .tabs-holder li,
@@ -37,16 +36,12 @@ toolbar .tabs-holder li {
     background: #ffffff;
     border-left: 1px solid transparent;
     border-right: 1px solid transparent;
-    border-bottom: 1px solid #dadbdc;
 }
 toolbar .tabs-holder li:hover {
     border-left-color: #dadbdc;
     border-right-color: #dadbdc;
 }
 
-toolbar .tabs-holder li + li {
-    /* margin-left: 3px; */
-}
 toolbar .tabs-holder a {
     text-decoration: none;
     padding: 0 14px;
@@ -58,6 +53,7 @@ toolbar .tabs-holder .active {
     background: #f5f6f7;
     border: 1px solid #dadbdc;
     border-bottom-color: transparent;
+    height: 22dip;
 }
 toolbar .tabs-holder .static {
     background: #1979ca;
@@ -107,7 +103,6 @@ toolbar .content-holder .group .title {
     text-align: center;
     border-top: 1px solid #dadbdc;
     white-space: nowrap;
-    /* height: 1*; */
 }
 
 toolbar .content-holder .group .group-divider {
@@ -239,7 +234,6 @@ toolbar .content-holder .group + .group {
 .ribbon-split-button {
     text-align: center;
     border: 1px solid transparent;
-    /* border: 1px solid red; */
     padding: 0;
     margin: 0;
     height: *;
@@ -266,7 +260,6 @@ toolbar .content-holder .group + .group {
     min-width: 0;
     padding: 2px 4px;
     width: *;
-    /* height: *; */
     cursor: default;
 }
 .ribbon-split-button .ribbon-main:hover,
@@ -445,6 +438,8 @@ toolbar .content-holder .group + .group {
     border-color: #a4cef9;
     background: rgba(164, 206, 249, 0.2);
 }
+.ribbon-split-button .ribbon-split:active,
+.ribbon-split-button .ribbon-main:active,
 .ribbon-button:active,
 .ribbon-tool-button:active,
 .ribbon-split:active,
@@ -472,6 +467,10 @@ toolbar .content-holder .group + .group {
 .ribbon-horizontal-toggle .ribbon-icon-button > * {
     height: 18px;
     width: *;   
+}
+
+.hide-ribbon-section {
+    display: none;
 }
 
 statusbar { 
